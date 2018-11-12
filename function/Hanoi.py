@@ -1,3 +1,5 @@
+# question description
+# https://en.wikipedia.org/wiki/Tower_of_Hanoi
 def move(n,a,b,c):
     if n == 1:
         print(a + " -> move to " + c)
