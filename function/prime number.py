@@ -1,20 +1,21 @@
-def odd():
+def _odd_iter():
     n = 1
-    while 1:
-        n = n+2
+    while True:
+        n = n + 2
         yield n
-def rm(x):
-    n = 2
-    while n<x:
-        if(x%n == 0):
-            return False
-    return True
+def _not_divisible(n):
+    return lambda x: x % n > 0
 
-l1 = odd()
-l2 = list(filter(rm,l1))
+def primes():
+    yield 2
+    it = _odd_iter() 
+    while True:
+        n = next(it) 
+        yield n
+        it = filter(_not_divisible(n), it)
 
-for n in l2:
-    if(n<100):
-        print(n)
+for x in primes():
+    if x < 100:
+        print(x)
     else:
         break
