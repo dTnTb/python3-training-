@@ -6,7 +6,7 @@ def count():
         fs.append(f(i)) 
     return fs
 f1,f2,f3 = count()
-print(f1())
+print(f1(),f2(),f3())
 
 def count1():
     fs = []
@@ -14,4 +14,4 @@ def count1():
         fs.append(lambda:i*i) 
     return fs
 f1,f2,f3 = count1()
-print(f1())
+print(f1(),f2(),f3())
